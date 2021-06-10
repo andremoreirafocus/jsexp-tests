@@ -25,26 +25,26 @@ const { rejects, deepStrictEqual } = require('assert');
     const filePath = '../mocks/threeItems-valid.csv';
     const expected = [
       {
-        "id": 123,
         "name": "André Moreira",
+        "id": 123,
         "profession": "Desenvolvedor fullstack",
-        "age": 53
+        "birthYear": 1968
       },
       {
-        "id": 134,
         "name": "Leandro Moreira",
+        "id": 134,
         "profession": "investidor",
-        "age": 23
+        "birthYear": 1998
       },
       {
-        "id": 942,
         "name": "Alberto Moreira",
+        "id": 942, 
         "profession": "Administrador",
-        "age": 55
+        "birthYear": 1966
       }
     ];
     const result = await File.csvToJson(filePath);
-    console.log(result);
-    deepStrictEqual(result, expected);
+    // console.log(result);
+    deepStrictEqual(JSON.stringify(result), JSON.stringify(expected));
   }
 })();
