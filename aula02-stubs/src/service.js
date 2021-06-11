@@ -3,17 +3,25 @@ class Service {
   async makeRequest(url) {
     return new Promise((resolve, reject) => {
       https.get(url, response => {
-        response.on("data", data => resolve(data));
-        response.on("error", reject);
-      })
+        console.log('Status response code: ', response.statusCode);
+        var data = '';
+        response.on("data", chunk => {
+          // console.log(chunk.toString());
+          data += chunk.toString();
+          console.log('Chunk received!');
+        });
+        response.on('end', (chunk) => {
+          console.log('end'); 
+          console.log(data);  
+          resolve(data);
+        })
+        // response.on("error", reject);
+      }).on("error", (error) => {
+        console.log(error);
+        reject(error);
+      });
     })
   }
 }
-
-(async() => {
-  console.log('teste');
-    const response = await new Service().makeRequest('https://swapi.dev/api/planets/1');
-    console.log(response);
-})();
 
 module.exports = Service;
