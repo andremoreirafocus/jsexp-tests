@@ -11,8 +11,8 @@ const mocks = {
 (async() => {
   {
     const service = new Service()
-    // const withoutStub = await service.makeRequest(BASE_URL_1);
-    const withoutStub = await service.makeRequest('https://covid19-brazil-api.vercel.app/api/report/v1');
+    const withoutStub = await service.makeRequest(BASE_URL_1);
+    // const withoutStub = await service.makeRequest('https://covid19-brazil-api.vercel.app/api/report/v1');
     console.log(withoutStub);
     console.log(JSON.stringify(withoutStub));
   }

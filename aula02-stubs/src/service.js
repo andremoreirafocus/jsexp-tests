@@ -15,7 +15,7 @@ class Service {
           console.log(data);  
           resolve(data);
         })
-        // response.on("error", reject);
+        response.on("error", reject);
       }).on("error", (error) => {
         console.log(error);
         reject(error);
