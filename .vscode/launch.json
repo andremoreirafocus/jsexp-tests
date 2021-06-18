@@ -6,13 +6,13 @@
   "configurations": [
 
     {
-      "type": "pwa-node",
+      "type": "node",
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\aula02-mocks\\src\\service.test.js"
+      "program": "${workspaceFolder}\\aula04-coverage-e2e\\api.test.js"
     }
   ]
 }
